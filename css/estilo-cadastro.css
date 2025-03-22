@@ -1,0 +1,135 @@
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(120deg, #1e1e2f, #1c1c1c);
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #2c2c3e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #00ff88; /* Verde Neon */
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento consistente entre os elementos */
+}
+
+label {
+    font-weight: bold;
+    color: #bbb;
+}
+
+input, select {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #3a3a4a;
+    color: #fff;
+    font-size: 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+    width: calc(100% - 24px); /* Largura total menos o padding */
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 8px #00ff88;
+    outline: none;
+}
+
+/* Botão */
+button {
+    background: linear-gradient(90deg, #00ff88, #00cc66);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #00cc66, #00ff88);
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #00ff88;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, select, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* Responsividade para desktop */
+@media screen and (min-width: 769px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    input, select, button {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 18px;
+        width: auto;
+    }
+}

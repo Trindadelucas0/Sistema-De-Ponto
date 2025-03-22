@@ -1,0 +1,7 @@
+/* Herda o estilo do cadastro */
+@import url("/sistema/css/estilo-cadastro.css");
+
+/* Apenas altera o título para cor azul neon */
+h2 {
+    color: #0099ff; /* Azul Neon */
+}

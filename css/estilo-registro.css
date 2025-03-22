@@ -1,0 +1,120 @@
+/* Estilo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(130deg, #131313, #1c1c1c);
+    color: #e0e0e0;
+    line-height: 1.8;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #242435;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #00ff88;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento consistente entre os elementos */
+}
+
+label {
+    font-weight: bold;
+    color: #ddd;
+}
+
+input, select {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #333344;
+    color: #fff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+    width: calc(100% - 24px); /* Largura total menos o padding */
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 8px #00ff88;
+    outline: none;
+}
+
+/* Botões */
+button, #ver-registros-btn {
+    background: linear-gradient(90deg, #0099ff, #0055ff);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%;
+}
+
+button:hover, #ver-registros-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0055ff, #0099ff);
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, select, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button, #ver-registros-btn {
+        font-size: 14px;
+    }
+}
+
+/* Responsividade para desktop */
+@media screen and (min-width: 769px) {
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    input, select, button {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    button, #ver-registros-btn {
+        font-size: 18px;
+        width: auto;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sistema/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tipo de Ponto</th>
+                <th>Horário</th>
+                <th>Fotos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-registros">
+            <!-- Os registros serão inseridos aqui -->
+        </tbody>
+    </table>
+
+    <!-- Formulário de edição (inicialmente oculto) -->
+    <div id="form-edicao" style="display: none;">
+        <h3>Editar Campo</h3>
+        <form id="editar-form">
+            <div class="form-group" id="editar-data-group">
+                <label for="editar-data">Data:</label>
+                <input type="date" id="editar-data">
+            </div>
+            <div class="form-group" id="editar-tipo-ponto-group">
+                <label for="editar-tipo-ponto">Tipo de Ponto:</label>
+                <select id="editar-tipo-ponto">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                    <option value="almoco">Saída para Almoço</option>
+                    <option value="retorno">Retorno do Almoço</option>
+                    <option value="intervalo_inicio">Início do Intervalo</option>
+                    <option value="intervalo_fim">Fim do Intervalo</option>
+                </select>
+            </div>
+            <div class="form-group" id="editar-hora-group">
+                <label for="editar-hora">Horário:</label>
+                <input type="time" id="editar-hora">
+            </div>
+            <div class="form-group" id="editar-foto-group">
+                <label for="editar-foto">Foto:</label>
+                <input type="file" id="editar-foto" accept="image/*" multiple>
+            </div>
+            <button type="submit">Salvar Alterações</button>
+            <button type="button" id="cancelar-edicao">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="form-group">
+        <label for="carga-horaria">Carga Horária Diária (HH:MM):</label>
+        <input type="text" id="carga-horaria" placeholder="Ex: 08:00" required>
+    </div>
+    <button id="calcular-horas">Calcular Horas</button>
+    <div id="resultado-horas">
+        <p>Horas Trabalhadas: <span id="horas-trabalhadas">00:00</span></p>
+        <p>Horas Extras: <span id="horas-extras">00:00</span></p>
+        <p>Horas Faltantes: <span id="horas-faltantes">00:00</span></p>
+        <button onclick="gerarPDF()">Gerar PDF</button>
+        <button id="Voltar">Voltar</button>
+    </div>
+    <script src="/sistema/js/ver-registros.js"></script>
+</body>
+</html>

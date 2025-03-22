@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sistema/css/estilo-registro.css">
+    <title>Registro de Ponto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registro de Ponto</h2>
+        <form id="ponto-form">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo-ponto">Tipo de Ponto:</label>
+                <select id="tipo-ponto" name="tipo_ponto" required>
+                    <option value="">Selecione o tipo de ponto</option>
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                    <option value="almoco">Saída para Almoço</option>
+                    <option value="retorno">Retorno do Almoço</option>
+                    <option value="intervalo_inicio">Início do Intervalo</option>
+                    <option value="intervalo_fim">Fim do Intervalo</option>
+                </select>
+            </div> 
+
+            <div class="form-group">
+                <label for="hora">Horário:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" multiple>
+            </div>
+
+            <button type="submit" id="botao">Registrar Ponto</button>
+        </form>
+        <button id="ver-registros-btn">Ver Registros</button>
+        
+    </div>
+    
+    
+
+    <script src="/sistema/js/registro.js"></script>
+    
+</body>
+
+</html>
