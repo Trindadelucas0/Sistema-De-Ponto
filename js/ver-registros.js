@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const usuarioLogado = localStorage.getItem('usuarioAtual');
     if (!usuarioLogado) {
         alert('Nenhum usuário logado! Faça login primeiro.');
-        window.location.href = '/sistema/pages/login.html';
+        window.location.href = '/pages/login.html';
         return;
     }
 
@@ -321,5 +321,5 @@ window.gerarPDF = function () {
 };
   // Navegar para a página de registros
   document.getElementById('Voltar').addEventListener('click', function() {
-    window.location.href = '/sistema/pages/registro-ponto.html'; // Vai para a página de visualização dos registros
+    window.location.href = '/pages/registro-ponto.html'; // Vai para a página de visualização dos registros
 });

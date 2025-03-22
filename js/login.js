@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (usuarioEncontrado) {
             localStorage.setItem('usuarioAtual', email);
         
-            window.location.href = '/sistema/pages/registro-ponto.html';
+            window.location.href = '/pages/registro-ponto.html';
         } else {
             alert('Login incorreto! Verifique seu e-mail e senha.');
         }

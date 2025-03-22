@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     alert('Ponto registrado com sucesso!');
                   // Redireciona para a página de registros após o registro do ponto
-                    window.location.href = '/sistema/pages/ver-registros.html'; 
+                    window.location.href = '/pages/ver-registros.html'; 
                 }
             };
             reader.readAsDataURL(file);  // Lê a foto como base64
@@ -64,6 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navegar para a página de registros
     document.getElementById('ver-registros-btn').addEventListener('click', function() {
-        window.location.href = '/sistema/pages/ver-registros.html'; // Vai para a página de visualização dos registros
+        window.location.href = '/pages/ver-registros.html'; // Vai para a página de visualização dos registros
     });
 });
