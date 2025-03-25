@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const nome = document.getElementById('nome').value.trim();
         
         function formatarData(data) {
-            const [ano, mes, dia] = data.split('-'); // Supondo que a entrada esteja no formato YYYY-MM-DD
-            const dataObj = new Date(`${ano}-${mes}-${dia}`);
+            const [ano, mes, dia] = data.split('-');
+            const dataObj = new Date(`${ano}-${mes}-${dia}T00:00:00`);
             const opcoes = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
             return dataObj.toLocaleDateString('pt-BR', opcoes);
         }

@@ -127,15 +127,38 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('registros', JSON.stringify(registros));
     }
 
-    // Função para formatar a data
     function formatarData(data) {
-        const partes = data.split('-');
-        if (partes.length === 3) {
-            const [ano, mes, dia] = partes;
-            const dataObj = new Date(ano, mes - 1, dia);
-            const opcoes = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
-            return dataObj.toLocaleDateString('pt-BR', opcoes);
+        // Caso a data já esteja formatada (ex: "segunda-feira, 03/04/2023")
+        if (typeof data !== 'string' || data.includes(',')) {
+            return data;
         }
+    
+        // Remove possíveis horas/timezone se existirem (ex: "2023-04-03T00:00:00")
+        const dataLimpa = data.split('T')[0]; 
+        
+        // Verifica formato YYYY-MM-DD
+        if (/^\d{4}-\d{2}-\d{2}$/.test(dataLimpa)) {
+            const [ano, mes, dia] = dataLimpa.split('-');
+            
+            // Cria a data com tratamento UTC EXPLÍCITO (solução definitiva)
+            const dataObj = new Date(Date.UTC(ano, mes - 1, dia));
+            
+            // Formatação à prova de erros
+            try {
+                return dataObj.toLocaleDateString('pt-BR', {
+                    weekday: 'long',
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    timeZone: 'America/Sao_Paulo' // Ou seu fuso específico
+                });
+            } catch (e) {
+                console.error('Erro ao formatar data:', e);
+                return dataLimpa; // Retorna no formato original se falhar
+            }
+        }
+        
+        // Se não for YYYY-MM-DD, retorna sem formatação
         return data;
     }
 
